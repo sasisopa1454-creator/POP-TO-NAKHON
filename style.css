@@ -1,0 +1,1177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   POP TO NAKHON — PASTEL UI
+========================================================= */
+
+:root {
+  --yellow: #fff7b8;
+  --yellow-dark: #f9df72;
+
+  --blue: #c9efff;
+  --blue-dark: #8dd8f7;
+
+  --pink: #ffdbea;
+  --pink-dark: #f7b3ce;
+
+  --green: #d8f8df;
+  --green-dark: #98dfad;
+
+  --purple: #9b8bd4;
+
+  --text: #454762;
+  --muted: #85899c;
+
+  --shadow: 0 15px 40px rgba(72, 74, 100, 0.12);
+
+  --radius: 28px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background: linear-gradient(
+      135deg,
+      #fff7c7 0%,
+      #e3f6ff 33%,
+      #ffe3ef 66%,
+      #e4f8e9 100%
+  );
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px clamp(18px, 5vw, 70px);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand-small {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.brand-small img {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  min-height: 43px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: white;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   ACCOUNT BUTTON
+========================================================= */
+
+.account-button {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.account-button:hover {
+  transform: translateY(-2px) rotate(4deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 110px 20px 40px;
+  align-items: center;
+  justify-content: center;
+  animation: pageIn 0.45s ease;
+}
+
+.page.active {
+  display: flex;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-card {
+  width: min(900px, 100%);
+  padding: clamp(35px, 7vw, 75px);
+  text-align: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 42px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* =========================================================
+   HERO LOGO
+========================================================= */
+
+.hero-logo {
+  width: clamp(130px, 20vw, 190px);
+  height: clamp(130px, 20vw, 190px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 8px solid #ffffff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: logoFloat 3.5s ease-in-out infinite;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-card h1 {
+  margin: 10px 0 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.05;
+  color: var(--purple);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: clamp(15px, 2vw, 19px);
+  margin-bottom: 45px;
+}
+
+.hero-card h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(25px, 4vw, 35px);
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   DECORATIONS
+========================================================= */
+
+.decor {
+  position: absolute;
+  font-size: 35px;
+  animation: floating 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.decor-one {
+  left: 7%;
+  top: 18%;
+  color: #f4ce53;
+}
+
+.decor-two {
+  right: 8%;
+  top: 30%;
+  color: #83cceb;
+  animation-delay: 0.7s;
+}
+
+.decor-three {
+  left: 12%;
+  bottom: 13%;
+  color: #ed9cba;
+  animation-delay: 1.2s;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(8deg);
+  }
+}
+
+/* =========================================================
+   ROLE CARDS
+========================================================= */
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.role-card {
+  border: none;
+  border-radius: 28px;
+  padding: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.tourist-role {
+  background: var(--yellow);
+}
+
+.guide-role {
+  background: var(--blue);
+}
+
+.role-icon {
+  font-size: 52px;
+  margin-bottom: 5px;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.role-card strong {
+  font-family: "Fredoka", sans-serif;
+  font-size: 24px;
+}
+
+.role-card span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================================
+   FORM / GENERAL CARDS
+========================================================= */
+
+.form-card,
+.attraction-card,
+.confirm-card,
+.waiting-card,
+.chat-card,
+.survey-card,
+.thankyou-card {
+  width: min(1000px, 100%);
+  background: rgba(255, 255, 255, 0.93);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 5vw, 48px);
+}
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.page-title h2 {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(27px, 4vw, 38px);
+}
+
+.page-title p {
+  margin: 5px 0 0;
+  color: var(--muted);
+}
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
+.profile-area {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-preview {
+  width: 145px;
+  height: 145px;
+  min-width: 145px;
+  min-height: 145px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pink);
+  border: 7px solid white;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.profile-preview img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: none;
+}
+
+#profilePlaceholder {
+  font-size: 55px;
+}
+
+/* =========================================================
+   PHOTO BUTTONS
+========================================================= */
+
+.photo-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.small-button {
+  padding: 10px 15px;
+  background: var(--blue);
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.small-button:hover {
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #edf0f5;
+  border-radius: 15px;
+  background: #fbfcff;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-dark);
+  box-shadow: 0 0 0 4px rgba(119, 201, 242, 0.15);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.registration-actions,
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.attraction-navigation {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 30px; 
+}
+
+.primary-button,
+.secondary-button,
+.send-button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button {
+  background: var(--green);
+  color: #315f42;
+}
+
+.secondary-button {
+  background: #eef0f6;
+  color: var(--text);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+}
+
+.full-button {
+  width: 100%;
+}
+
+/* =========================================================
+   ATTRACTIONS
+========================================================= */
+
+.attraction-card {
+  width: min(1150px, 100%);
+}
+
+.page-indicator {
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.attraction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.attraction-item {
+  border: 3px solid transparent;
+  background: white;
+  border-radius: 22px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attraction-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.10);
+}
+
+.attraction-item.selected {
+  border-color: var(--green-dark);
+  background: #f3fff6;
+  box-shadow: 0 10px 25px rgba(126, 213, 155, 0.25);
+}
+
+/* =========================================================
+   ATTRACTION IMAGE (ALWAYS 4:3)
+========================================================= */
+
+.attraction-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #f2f3f6;
+}
+
+.attraction-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.attraction-item:hover .attraction-image img {
+  transform: scale(1.04);
+}
+
+.attraction-name {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px 5px;
+  font-weight: 800;
+  font-size: clamp(13px, 1.5vw, 17px);
+}
+
+.selected-label {
+  display: none;
+  color: #4a9b61;
+  font-size: 13px;
+  font-weight: 800;
+  padding-bottom: 7px;
+}
+
+.attraction-item.selected .selected-label {
+  display: block;
+}
+
+/* =========================================================
+   CONFIRM
+========================================================= */
+
+.confirm-card {
+  text-align: center;
+  max-width: 650px;
+}
+
+.confirm-icon {
+  font-size: 55px;
+}
+
+.confirm-card h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 35px;
+}
+
+.confirm-card h3 {
+  color: var(--purple);
+  font-family: "Fredoka", sans-serif;
+  font-size: 25px;
+}
+
+.confirm-image {
+  width: min(600px, 100%);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 22px;
+  margin: 20px auto;
+}
+
+.confirm-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   WAITING
+========================================================= */
+
+.waiting-card {
+  text-align: center;
+  max-width: 700px;
+}
+
+.waiting-icon {
+  font-size: 65px;
+  animation: floating 2s infinite;
+}
+
+.progress-container {
+  width: 100%;
+  height: 25px;
+  background: #edf0f5;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 30px 0 15px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(
+      90deg,
+      var(--yellow-dark),
+      var(--pink-dark),
+      var(--blue-dark),
+      var(--green-dark)
+  );
+  transition: width 1s linear;
+}
+
+.countdown {
+  font-family: "Fredoka", sans-serif;
+  font-size: 25px;
+  color: var(--purple);
+}
+
+.waiting-result {
+  margin-top: 30px;
+}
+
+#resultIcon {
+  font-size: 70px;
+}
+
+/* =========================================================
+   CHAT
+========================================================= */
+
+.chat-card {
+  max-width: 750px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 18px 22px;
+  background: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.chat-user small {
+  display: block;
+  color: #5e7580;
+}
+
+.online-dot {
+  width: 12px;
+  height: 12px;
+  background: #62c87e;
+  border-radius: 50%;
+}
+
+.chat-messages {
+  height: 420px;
+  padding: 25px;
+  overflow-y: auto;
+  background: #fffdf9;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.message span {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  line-height: 1.5;
+}
+
+.message.received {
+  justify-content: flex-start;
+}
+
+.message.received span {
+  background: var(--pink);
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message.sent span {
+  background: var(--green);
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.chat-input-area input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #f5f6fa;
+  border-radius: 15px;
+  padding: 13px 16px;
+}
+
+.send-button {
+  background: var(--yellow);
+  width: 50px;
+  padding: 0;
+}
+
+.finish-chat-button {
+  width: calc(100% - 30px);
+  margin: 0 15px 15px;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  background: var(--pink);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.finish-chat-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   SURVEY
+========================================================= */
+
+.survey-card {
+  max-width: 800px;
+}
+
+.survey-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.survey-question {
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.rating-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.rating-option input {
+  display: none;
+}
+
+.rating-option span {
+  display: block;
+  text-align: center;
+  padding: 10px 5px;
+  background: #f4f5f8;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.rating-option span:hover {
+  transform: translateY(-2px);
+}
+
+.rating-option input:checked + span {
+  background: var(--yellow);
+  font-weight: 800;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* สไตล์ควบคุมปุ่ม Finish ในหน้าประเมินความพึงพอใจ (สถานะเริ่มต้น: สีเทาและกดไม่ได้) */
+#surveyFinishBtn {
+  background-color: #eef0f6;
+  color: var(--muted);
+  cursor: not-allowed;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* เมื่อตอบครบ 7 ข้อ ปุ่มจะเปลี่ยนเป็นสีเขียวและพร้อมใช้งาน */
+#surveyFinishBtn.enabled-green {
+  background-color: var(--green);
+  color: #315f42;
+  cursor: pointer;
+}
+
+#surveyFinishBtn.enabled-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================================================
+   THANK YOU
+========================================================= */
+
+.thankyou-card {
+  max-width: 700px;
+  text-align: center;
+  background: linear-gradient(
+      145deg,
+      #fff8ce,
+      #e7f8ff,
+      #ffe6f0,
+      #e6f8eb
+  );
+}
+
+.thankyou-icon {
+  font-size: 80px;
+  animation: floating 2.5s infinite;
+}
+
+.thankyou-card h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(30px, 5vw, 45px);
+}
+
+.thankyou-card h2 {
+  font-family: "Fredoka", sans-serif;
+  color: var(--purple);
+  font-size: clamp(35px, 6vw, 55px);
+}
+
+.thankyou-card p {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+/* =========================================================
+   ACCOUNT PANEL
+========================================================= */
+
+.account-panel {
+  position: fixed;
+  right: 20px;
+  top: 85px;
+  width: min(330px, calc(100vw - 40px));
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  z-index: 2000;
+  animation: pageIn 0.25s ease;
+}
+
+.account-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-panel-header button {
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.account-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 15px 0 20px;
+}
+
+.account-avatar {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  min-height: 90px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pink);
+  font-size: 35px;
+}
+
+.account-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.account-panel .primary-button {
+  margin-bottom: 18px; 
+}
+
+.account-panel .secondary-button {
+  background-color: #ff7675;
+  color: #ffffff;
+  border: none;
+}
+
+.account-panel .secondary-button:hover {
+  background-color: #d63031;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 100px);
+  background: #3d405b;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 15px;
+  z-index: 3000;
+  transition: transform 0.3s ease;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+}
+
+/* =========================================================
+   UTILITY
+========================================================= */
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================================
+   TABLET & MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+  .attraction-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .attraction-item {
+    padding: 7px;
+    border-radius: 17px;
+  }
+
+  .attraction-name {
+    font-size: 12px;
+    min-height: 52px;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    height: 65px;
+    padding: 8px 15px;
+  }
+
+  .brand-small {
+    font-size: 16px;
+  }
+
+  .brand-small img {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .account-button {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .page {
+    padding: 90px 12px 25px;
+  }
+
+  .hero-card,
+  .form-card,
+  .attraction-card,
+  .confirm-card,
+  .waiting-card,
+  .chat-card,
+  .survey-card,
+  .thankyou-card {
+    border-radius: 23px;
+    padding: 22px;
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .attraction-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .attraction-item {
+    padding: 10px;
+  }
+
+  .attraction-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .attraction-name {
+    font-size: 15px;
+    min-height: auto;
+  }
+
+  .attraction-navigation,
+  .registration-actions,
+  .confirm-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .rating-row {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+  }
+
+  .rating-option span {
+    padding: 9px 2px;
+    font-size: 10px;
+  }
+
+  .chat-messages {
+    height: 380px;
+  }
+
+  .hero-logo {
+    width: 145px;
+    height: 145px;
+    min-width: 145px;
+    min-height: 145px;
+  }
+}
+
+@media (max-width: 380px) {
+  .rating-option span {
+    font-size: 9px;
+  }
+
+  .profile-preview {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+  }
+
+  .hero-logo {
+    width: 125px;
+    height: 125px;
+    min-width: 125px;
+    min-height: 125px;
+  }
+}
