@@ -156,10 +156,11 @@ function completeRegistration(role) {
   updateAccount();
   showToast("Saved successfully!");
   
-  // เปลี่ยนเส้นทางไปยังหน้า Here2Go ทันทีหลังลงทะเบียนเสร็จ
+  // เปลี่ยนไปหน้า Here2Go สำหรับทั้งฝั่ง Tourist และ Tour Guide
   showPage("pageHere2Go");
 }
 
+// ฟังก์ชันกดจากหน้า Here2Go ไปหน้าเลือกสถานที่ (Attractions)
 function goToAttractionsFromHere2Go() {
   showPage("page3");
   renderAttractions();
