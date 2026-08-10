@@ -100,11 +100,9 @@ function previewProfile(input, type) {
     if (img) {
       img.src = e.target.result;
       img.style.display = "block";
-      img.classList.remove("hidden");
     }
     if (placeholder) {
       placeholder.style.display = "none";
-      placeholder.classList.add("hidden");
     }
 
     localStorage.setItem(`pop_profile_image_${type}`, e.target.result);
@@ -158,12 +156,7 @@ function completeRegistration(role) {
   updateAccount();
   showToast("Saved successfully!");
   
-  // แก้ไขให้เปลี่ยนไปหน้าเลือกสถานที่ (page3) แทนหน้า pageHere2Go ที่ไม่มีอยู่จริง
-  showPage("page3");
-  renderAttractions();
-}
-
-function goToAttractionsFromHere2Go() {
+  // เปลี่ยนเส้นทางไปหน้าเลือกสถานที่ (page3) ทันทีหลังลงทะเบียนเสร็จ
   showPage("page3");
   renderAttractions();
 }
@@ -192,28 +185,13 @@ function loadSavedProfileData(role) {
 
     const imgKey = `pop_profile_image_${role}`;
     const imgData = localStorage.getItem(imgKey);
-    const img = document.getElementById(role === "tourist" ? "touristProfileImage" : "guideProfileImage");
-    const placeholder = document.getElementById(role === "tourist" ? "touristProfilePlaceholder" : "guideProfilePlaceholder");
-    
     if (imgData) {
-      if (img) {
+      const img = document.getElementById(role === "tourist" ? "touristProfileImage" : "guideProfileImage");
+      const placeholder = document.getElementById(role === "tourist" ? "touristProfilePlaceholder" : "guideProfilePlaceholder");
+      if (img && placeholder) {
         img.src = imgData;
         img.style.display = "block";
-        img.classList.remove("hidden");
-      }
-      if (placeholder) {
         placeholder.style.display = "none";
-        placeholder.classList.add("hidden");
-      }
-    } else {
-      if (img) {
-        img.src = "";
-        img.style.display = "none";
-        img.classList.add("hidden");
-      }
-      if (placeholder) {
-        placeholder.style.display = "block";
-        placeholder.classList.remove("hidden");
       }
     }
   } catch (e) {
@@ -542,15 +520,11 @@ function logoutUser() {
       if (img) {
         img.src = "";
         img.style.display = "none";
-        img.classList.add("hidden");
       }
     });
     ["touristProfilePlaceholder", "guideProfilePlaceholder", "accountAvatarPlaceholder"].forEach(id => {
       const ph = document.getElementById(id);
-      if (ph) {
-        ph.style.display = "block";
-        ph.classList.remove("hidden");
-      }
+      if (ph) ph.style.display = "block";
     });
 
     clearAllSelections();
@@ -590,15 +564,6 @@ function updateAccount() {
   if (!profile) {
     nameEl.textContent = "Guest";
     roleEl.textContent = "Not registered";
-    if (avatarImg) {
-      avatarImg.src = "";
-      avatarImg.classList.add("hidden");
-      avatarImg.style.display = "none";
-    }
-    if (placeholder) {
-      placeholder.style.display = "block";
-      placeholder.classList.remove("hidden");
-    }
     return;
   }
 
@@ -609,19 +574,7 @@ function updateAccount() {
   if (imgData && avatarImg) {
     avatarImg.src = imgData;
     avatarImg.classList.remove("hidden");
-    avatarImg.style.display = "block";
-    if (placeholder) {
-      placeholder.style.display = "none";
-      placeholder.classList.add("hidden");
-    }
-  } else if (avatarImg) {
-    avatarImg.src = "";
-    avatarImg.classList.add("hidden");
-    avatarImg.style.display = "none";
-    if (placeholder) {
-      placeholder.style.display = "block";
-      placeholder.classList.remove("hidden");
-    }
+    if (placeholder) placeholder.style.display = "none";
   }
 }
 
