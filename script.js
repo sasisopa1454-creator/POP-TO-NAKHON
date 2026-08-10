@@ -1,7 +1,3 @@
-/* =====================================================
-   POP TO NAKHON - FIXED JAVASCRIPT (UPDATED NAVIGATION & BUTTONS)
-   ===================================================== */
-
 const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbgghF-JxXP5EuYfYGLWakZCESxhchh5Mp0_1s8xMxLLgGm4m2McAU8BRWglo3-oll/exec";
 
 const places = [
@@ -159,6 +155,13 @@ function completeRegistration(role) {
 
   updateAccount();
   showToast("Saved successfully!");
+  
+  // เปลี่ยนไปหน้า Here2Go สำหรับทั้งฝั่ง Tourist และ Tour Guide
+  showPage("pageHere2Go");
+}
+
+// ฟังก์ชันกดจากหน้า Here2Go ไปหน้าเลือกสถานที่ (Attractions)
+function goToAttractionsFromHere2Go() {
   showPage("page3");
   renderAttractions();
 }
@@ -240,7 +243,6 @@ function renderAttractions() {
     indicator.textContent = `Page ${currentAttractionPage + 1} of 4`;
   }
 
-  // ปรับการแสดงผลและจัดตำแหน่งปุ่ม Back และ Next (ให้ Next อยู่ฝั่งขวาสุดเสมอ)
   const backBtn = document.getElementById("attractionBackButton");
   const nextBtn = document.getElementById("attractionNextButton");
 
@@ -252,18 +254,18 @@ function renderAttractions() {
 
   if (backBtn) {
     if (currentAttractionPage === 0) {
-      backBtn.style.display = "none"; // หน้าแรกสุด (หน้า 1): ซ่อนปุ่ม Back
+      backBtn.style.display = "none";
     } else {
-      backBtn.style.display = "inline-block"; // หน้าอื่นๆ: แสดงปุ่ม Back ปกติ
+      backBtn.style.display = "inline-block";
     }
   }
 
   if (nextBtn) {
-    nextBtn.style.marginLeft = "auto"; // ผลักปุ่ม Next ไปชิดขวาเสมอ
+    nextBtn.style.marginLeft = "auto";
     if (currentAttractionPage >= 3) {
-      nextBtn.style.display = "none"; // หน้าสุดท้าย (หน้า 4): ซ่อนปุ่ม Next
+      nextBtn.style.display = "none";
     } else {
-      nextBtn.style.display = "inline-block"; // หน้าอื่นๆ: แสดงปุ่ม Next ปกติ
+      nextBtn.style.display = "inline-block";
     }
   }
 }
@@ -447,7 +449,6 @@ function submitTouristSurvey() {
     surveyData[`q${i}`] = selectedRadio ? selectedRadio.value : "";
   }
 
-  // ส่งข้อมูลแบบประเมินไป Google Sheets
   fetch(APP_SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
@@ -461,10 +462,6 @@ function submitTouristSurvey() {
 
 function startNewConversation() { showPage("page3"); }
 function finishGuideSession() { showPage("page7"); }
-
-/* =====================================================
-   [ฟังก์ชันควบคุมการกลับหน้าแรกและ Log Out]
-   ===================================================== */
 
 function clearAllSelections() {
   selectedPlace = null;
@@ -508,16 +505,12 @@ function resetSurveyAndGoHome() {
 
 function logoutUser() {
   if (confirm("Are you sure you want to log out?")) {
-    // ลบข้อมูลทั้งหมดใน LocalStorage อย่างหมดจด
     localStorage.clear();
-    
-    // เคลียร์ค่าตัวแปรสถานะทั้งหมด
     currentRole = null;
     currentAttractionPage = 0;
     selectedPlace = null;
     if (countdownTimer) clearInterval(countdownTimer);
 
-    // ล้างข้อมูลในฟอร์มกรอกข้อมูลทั้งหมด
     const inputs = document.querySelectorAll("input, select, textarea");
     inputs.forEach(input => {
       if (input.type === "checkbox" || input.type === "radio") {
@@ -527,7 +520,6 @@ function logoutUser() {
       }
     });
 
-    // รีเซ็ตรูปโปรไฟล์และอวตารทั้งหมด
     ["touristProfileImage", "guideProfileImage", "accountAvatar"].forEach(id => {
       const img = document.getElementById(id);
       if (img) {
@@ -542,7 +534,6 @@ function logoutUser() {
 
     clearAllSelections();
     
-    // ซ่อนพาเนลบัญชี (Account Panel) ถ้าเปิดอยู่
     const panel = document.getElementById("accountPanel");
     if (panel) {
       panel.classList.add("hidden");
