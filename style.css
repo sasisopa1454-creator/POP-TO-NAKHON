@@ -1175,3 +1175,50 @@ textarea {
     min-height: 125px;
   }
 }
+
+/* =========================================================
+   HERE2GO PAGE STYLING
+========================================================= */
+
+.here2go-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(36px, 6vw, 60px);
+  color: var(--purple);
+  margin: 0 0 5px;
+}
+
+.here2go-subtitle {
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: var(--muted);
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.here2go-image-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  background: #f8f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.here2go-main-image {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.here2go-image-container a:hover .here2go-main-image {
+  transform: scale(1.02);
+}
