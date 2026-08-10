@@ -872,6 +872,7 @@ textarea {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* สไตล์ควบคุมปุ่ม Finish ในหน้าประเมินความพึงพอใจ (สถานะเริ่มต้น: สีเทาและกดไม่ได้) */
 #surveyFinishBtn {
   background-color: #eef0f6;
   color: var(--muted);
@@ -879,6 +880,7 @@ textarea {
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* เมื่อตอบครบ 7 ข้อ ปุ่มจะเปลี่ยนเป็นสีเขียวและพร้อมใช้งาน */
 #surveyFinishBtn.enabled-green {
   background-color: var(--green);
   color: #315f42;
