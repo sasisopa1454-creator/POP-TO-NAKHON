@@ -156,7 +156,11 @@ function completeRegistration(role) {
   updateAccount();
   showToast("Saved successfully!");
   
-  // เปลี่ยนเส้นทางไปหน้าเลือกสถานที่ (page3) ทันทีหลังลงทะเบียนเสร็จ
+  // เปลี่ยนเส้นทางไปยังหน้า Here2Go ทันทีหลังลงทะเบียนเสร็จ
+  showPage("pageHere2Go");
+}
+
+function goToAttractionsFromHere2Go() {
   showPage("page3");
   renderAttractions();
 }
