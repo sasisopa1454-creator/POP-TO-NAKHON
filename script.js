@@ -1,16 +1,16 @@
 const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbgghF-JxXP5EuYfYGLWakZCESxhchh5Mp0_1s8xMxLLgGm4m2McAU8BRWglo3-oll/exec";
 
 const places = [
-  { id: 1, name: "WAT PHRA MAHATHAT WORAMAHAWIHAN", image: "https://cdn.phototourl.com/free/2026-08-08-9a55eb11-bb76-4fdb-91fc-7d433470b25e.png" },
+  { id: 1, name: "WAT PHRA MAHATHAT WORAMAHAWIHAN", image: "https://cdn.phototourl.com/free/2026-08-22-69417acb-eb1e-4ea0-b453-0316d8a57aeb.png" },
   { id: 2, name: "WAT CHEDI (AI KHAI)", image: "https://cdn.phototourl.com/free/2026-08-08-00b5e41f-f683-429e-be32-a97d5d701f98.png" },
   { id: 3, name: "WAT KANG PLA, THUNG SONG", image: "https://cdn.phototourl.com/free/2026-08-08-20382626-5cfa-4806-8741-51702892a5f2.png" },
-  { id: 4, name: "YONG WATERFALL", image: "https://cdn.phototourl.com/free/2026-08-08-a480626d-9e92-4ee4-8e1b-2183255c3c8d.png" },
+  { id: 4, name: "YONG WATERFALL", image: "https://cdn.phototourl.com/free/2026-08-22-16f95a54-9c10-4898-b189-d73a9aef497b.png" },
   { id: 5, name: "KHANOM-SICHON COASTLINE", image: "https://cdn.phototourl.com/free/2026-08-08-6882b009-f5e6-44f3-8304-283ef15051c0.png" },
-  { id: 6, name: "KIRIWONG VILLAGE", image: "https://cdn.phototourl.com/free/2026-08-08-b6c3e2e2-75ad-4b06-b2cf-b71cfce86040.png" },
+  { id: 6, name: "KIRIWONG VILLAGE", image: "https://cdn.phototourl.com/free/2026-08-22-2a7810c5-63c8-4c0e-8c75-f515cad5b81b.png" },
   { id: 7, name: "NANG TALUNG SUCHART HOUSE", image: "https://cdn.phototourl.com/free/2026-08-08-ade8e345-014e-44cd-81a3-b486b43c1418.jpg" },
-  { id: 8, name: "NAKHON SI THAMMARAT CITY SHRINE", image: "https://cdn.phototourl.com/free/2026-08-08-b9692b73-ddf1-408b-9f8d-dab3fed32c29.png" },
+  { id: 8, name: "NAKHON SI THAMMARAT CITY SHRINE", image: "https://cdn.phototourl.com/free/2026-08-22-5cf719cc-a8fa-4f54-811f-72abf8e90776.png" },
   { id: 9, name: "PHRA ISUAN & PHRA NARAI SHRINES", image: "https://cdn.phototourl.com/free/2026-08-08-7451ec9b-a060-4e93-917e-faf9498bbea8.png" },
-  { id: 10, name: "WALAILAK UNIVERSITY", image: "https://cdn.phototourl.com/free/2026-08-08-3c9863c0-c760-4a17-a0f2-56cadd3fc4e5.png" },
+  { id: 10, name: "WALAILAK UNIVERSITY", image: "https://cdn.phototourl.com/free/2026-08-22-8a1eaa32-63c3-49a3-acc6-6b2698b2fe26.png" },
   { id: 11, name: "THE ROYAL RESIDENCE & PAK PHANANG", image: "https://cdn.phototourl.com/free/2026-08-08-2b471a7d-9f9f-4106-ad1a-f38042167cab.png" },
   { id: 12, name: "NAKHON SI THAMMARAT HANDICRAFT CENTRE", image: "https://cdn.phototourl.com/free/2026-08-08-6c94574b-9c9c-4ada-a4b8-550eea37da15.png" }
 ];
