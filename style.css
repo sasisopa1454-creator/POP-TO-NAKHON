@@ -1222,3 +1222,17 @@ textarea {
 .here2go-image-container a:hover .here2go-main-image {
   transform: scale(1.02);
 }
+.here2go-image-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.here2go-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
