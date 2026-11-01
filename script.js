@@ -1,18 +1,18 @@
 const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbgghF-JxXP5EuYfYGLWakZCESxhchh5Mp0_1s8xMxLLgGm4m2McAU8BRWglo3-oll/exec";
 
 const places = [
-  { id: 1, name: "WAT PHRA MAHATHAT WORAMAHAWIHAN", image: "พระธาจุ.jpg" },
-  { id: 2, name: "WAT CHEDI (AI KHAI)", image: "วัดเจดีย์.jpg" },
-  { id: 3, name: "WAT KANG PLA, THUNG SONG", image: "วะดก้างปลา.jpeg" },
-  { id: 4, name: "YONG WATERFALL", image: "โยง.jpeg" },
-  { id: 5, name: "KHANOM-SICHON COASTLINE", image: "ขนอม.jpeg" },
-  { id: 6, name: "KIRIWONG VILLAGE", image: "คีรีวง.jpg" },
-  { id: 7, name: "NANG TALUNG SUCHART HOUSE", image: "หนังตะลุง.jpeg" },
-  { id: 8, name: "NAKHON SI THAMMARAT CITY SHRINE", image: "ศาลหลักเมือง.jpg" },
-  { id: 9, name: "PHRA ISUAN & PHRA NARAI SHRINES", image: "หอพระ.jpg" },
-  { id: 10, name: "WALAILAK UNIVERSITY", image: "sky walk.jpg" },
-  { id: 11, name: "THE ROYAL RESIDENCE & PAK PHANANG", image: "พระตำหนัก.jpg" },
-  { id: 12, name: "NAKHON SI THAMMARAT HANDICRAFT CENTRE", image: "ร้านค้า.jpg" }
+  { id: 1, name: "WAT PHRA MAHATHAT WORAMAHAWIHAN", image: "images/phra-that.jpg" },
+  { id: 2, name: "WAT CHEDI (AI KHAI)", image: "images/wat-chedi.jpg" },
+  { id: 3, name: "WAT KANG PLA, THUNG SONG", image: "images/wat-kang-pla.jpeg" },
+  { id: 4, name: "YONG WATERFALL", image: "images/yong.jpeg" },
+  { id: 5, name: "KHANOM-SICHON COASTLINE", image: "images/khanom.jpeg" },
+  { id: 6, name: "KIRIWONG VILLAGE", image: "images/kiriwong.jpg" },
+  { id: 7, name: "NANG TALUNG SUCHART HOUSE", image: "images/nang-talung.jpeg" },
+  { id: 8, name: "NAKHON SI THAMMARAT CITY SHRINE", image: "images/city-shrine.jpg" },
+  { id: 9, name: "PHRA ISUAN & PHRA NARAI SHRINES", image: "images/hor-phra.jpg" },
+  { id: 10, name: "WALAILAK UNIVERSITY", image: "images/sky-walk.jpg" },
+  { id: 11, name: "THE ROYAL RESIDENCE & PAK PHANANG", image: "images/phra-tamnak.jpg" },
+  { id: 12, name: "NAKHON SI THAMMARAT HANDICRAFT CENTRE", image: "images/shop.jpg" }
 ];
 
 const questionPool = [
